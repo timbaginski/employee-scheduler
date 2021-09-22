@@ -28,4 +28,9 @@ class Employee:
         self.current_hours += new_shift.get_hours()
         return True
 
+    # returns True if I am working enough hours this week, False otherwise
+    def is_satisfied(self):
+        return self.current_hours > self.min_hours
+
+
 

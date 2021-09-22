@@ -1,10 +1,12 @@
 # this class encapsulates a shift
 # the shift has a start and end time, as well as an occupation for the employee that will fill it
+from days import Day
+
 
 class Shift:
 
     # initialize me with a start_time, end_time, and required occupation
-    def __init__(self, start_time: float, end_time: float, occupation: str, day: str):
+    def __init__(self, start_time: float, end_time: float, occupation: str, day: Day):
         self.start_time = start_time
         self.end_time = end_time
         self.occupation = occupation
