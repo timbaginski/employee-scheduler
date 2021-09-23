@@ -6,12 +6,11 @@ from days import Day
 class Shift:
 
     # initialize me with a start_time, end_time, and required occupation
-    def __init__(self, start_time: float, end_time: float, occupation: str, day: Day):
+    def __init__(self, start_time: float, end_time: float, occupation: str):
         self.start_time = start_time
         self.end_time = end_time
         self.occupation = occupation
         self.occupied = False
-        self.day = day
 
     # returns the number of hours I take
     def get_hours(self) -> float:
@@ -21,10 +20,6 @@ class Shift:
     def get_occupation(self):
         return self.occupation
 
-    # returns bool representing whether or not I fall on an employees off day
-    def is_on_off_day(self, off_days: list) -> bool:
-        return self.day in off_days
-
     # returns whether my occupation matches an employee's occupation
     def has_occupation(self, occupation: str) -> bool:
         return self.occupation == occupation
@@ -32,4 +27,12 @@ class Shift:
     # occupies me by setting occupied to true
     def occupy(self):
         self.occupied = True
+
+    # unoccupy me
+    def unoccupy(self):
+        self.occupied = False
+
+    # returns whether I am occupied
+    def is_occupied(self):
+        return self.occupied
 
